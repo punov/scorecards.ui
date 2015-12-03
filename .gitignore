@@ -9,5 +9,5 @@
 node_modules/
 dist/
 src/**/*.css    # use *.css mask in Webstorm Settings -> Version Control Ignored Files
-src/lib         # ignore directory in Webstorm Settings -> Version Control Ignored Files
+src/lib/**/*.*  # ignore directory in Webstorm Settings -> Version Control Ignored Files
 src/index.html  # ignore file in Webstorm Settings -> Version Control Ignored Files

@@ -1,0 +1,169 @@
+//  http://meyerweb.com/eric/tools/css/reset/ 
+//  v2.0 | 20110126
+//  License: none (public domain)
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+//  HTML5 display-role reset for older browsers
+article, aside, details, figcaption, figure,
+footer, header, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+// Additional reset and default definitions
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -moz-text-rendering: optimizelegibility;
+  -webkit-text-rendering: optimizelegibility;
+  text-rendering: optimizelegibility;
+}
+
+body:before {
+  content: '';
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px;
+}
+
+summary,
+main {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+}
+
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+
+a {
+  background-color: transparent;
+}
+
+a,
+a * {
+  cursor: pointer;
+}
+
+a:active,
+a:hover {
+  outline: 0;
+}
+
+a img {
+  border: 0 none;
+}
+
+[hidden],
+template {
+  display: none;
+}
+
+mark {
+  color: inherit;
+  background-color: inherit;
+}
+
+ruby,
+rt {
+  text-indent: 0;
+}
+
+ruby > rt {
+  line-height: normal;
+  display: block;
+  text-align: center;
+  -webkit-text-emphasis: none;
+}
+
+hr {
+  display: block;
+  height: 0;
+  margin: 0;
+  border: 0 none;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+td,
+th {
+  width: auto;
+  padding: 0;
+  vertical-align: top;
+}
+
+img {
+  border: 0;
+}
+
+svg:not(:root) {
+  overflow: hidden;
+}
+
+ins {
+    text-decoration: none;
+}

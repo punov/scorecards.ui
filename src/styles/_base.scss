@@ -1,0 +1,32 @@
+$base-color__body: #000000;
+$base__font-family:  Arial, sans-serif;
+$body-background: #efefef;
+$score-background: #0b5394;
+$score-color: #ffe4d6;
+$base__font-size: 16;
+$body__line-height: 1.4;
+
+@function rem($px, $base: $base__font-size) {
+  @return ($px / $base)*1rem;
+}
+
+@function em($px, $base: $base__font-size) {
+    @return ($px / $base) * 1em;
+}
+
+@mixin clearfix {
+    -ms-zoom: 1;
+
+    &:after,
+    &:before {
+        display: table;
+        content: '';
+        line-height: 0;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+$body__font-size: rem(14);

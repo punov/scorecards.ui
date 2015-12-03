@@ -1,0 +1,85 @@
+<!doctype html>
+<html xml:lang="en" lang="en" ng-app="Scorecards" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="description" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no" />
+    <title ng-bind="title">NFL Scorecards</title>
+    <base href="/">
+    <link rel="icon" type="image/x-icon" href="./favicon.ico" />
+    <link rel="icon" type="image/png" href="./images/nohash/favicon.png" />
+    <!-- For iPhone 4 Retina display: -->
+    <link rel="apple-touch-icon" sizes="114x114" href="./apple-touch-icon-114x114-precomposed.png">
+    <!-- For iPad: -->
+    <link rel="apple-touch-icon" sizes="72x72" href="./apple-touch-icon-72x72-precomposed.png">
+    <!-- For iPhone: -->
+    <link rel="apple-touch-icon" sizes="57x57" href="./apple-touch-icon-57x57-precomposed.png">
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+
+    <!-- build:cssLibs styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:cssSrc styles/styles.css -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="styles/import.css">
+    <!-- endinject -->
+    <!-- endbuild -->
+
+</head>
+
+<body>
+
+<!--[if lt IE 8
+    <p class = "browsehappy">You are using an <strong>outdated</strong> browser. Please
+        <a href = "http://browsehappy.com/">upgrade your browser</a>
+        to improve your experience.
+    </p>
+<![endif]-->
+
+<section class="layout" role="document" ui-view></section>
+
+<!-- build:jsLibs js/libs.js -->
+<!-- inject:bower:js -->
+<!-- bower:js -->
+<script src="lib/angular/angular.js"></script>
+<script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="lib/angular-messages/angular-messages.js"></script>
+<script src="lib/angular-mocks/angular-mocks.js"></script>
+<script src="lib/angular-sanitize/angular-sanitize.js"></script>
+<script src="lib/ui-router/release/angular-ui-router.js"></script>
+<!-- endbower -->
+<!-- endinject -->
+<!-- endbuild -->
+<script>
+	window.globalConfig = {
+	"debug": true,
+	"apiPath": "api",
+	"maxResponseTime": 60000,
+	"ngStrictDi": false,
+	"env": "dev"
+}
+</script>
+<!-- build:jsSrc js/index.js -->
+<!-- inject:js -->
+<script src="app/app.js"></script>
+<script src="app/common/api-module/api-module.js"></script>
+<script src="app/common/common-module.js"></script>
+<script src="app/home-module/home-module.js"></script>
+<script src="app/common/api-module/constants/api-statuses-constant.js"></script>
+<script src="app/home-module/constants/home-api-config.js"></script>
+<script src="app/home-module/constants/home-route-config.js"></script>
+<script src="app/common/api-module/constants/global-config.js"></script>
+<script src="app/home-module/directives/scorecard-directive.js"></script>
+<script src="app/home-module/services/home-service.js"></script>
+<script src="app/common/api-module/services/api-service.js"></script>
+<script src="app/home-module/controllers/home-controller.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
+
+</body>
+
+</html>
