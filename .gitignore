@@ -1,0 +1,13 @@
+#--Important--
+# Please add this line to Webstorm Settings -> Editor -> File Types -> ignored files and folders
+
+.idea;*.iws;node_modules;dist;
+
+# Make sure that you've included following files and folders to the ignore list of WebStorm
+
+.idea/
+node_modules/
+dist/
+src/**/*.css    # use *.css mask in Webstorm Settings -> Version Control Ignored Files
+src/lib         # ignore directory in Webstorm Settings -> Version Control Ignored Files
+src/index.html  # ignore file in Webstorm Settings -> Version Control Ignored Files
