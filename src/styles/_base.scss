@@ -14,19 +14,57 @@ $body__line-height: 1.4;
     @return ($px / $base) * 1em;
 }
 
-@mixin clearfix {
-    -ms-zoom: 1;
+$body__font-size: rem(14);
 
-    &:after,
-    &:before {
-        display: table;
-        content: '';
-        line-height: 0;
-    }
-
-    &:after {
-        clear: both;
-    }
+*  {
+    outline: none;
 }
 
-$body__font-size: rem(14);
+html,
+body {
+    height: 100%;
+}
+
+body  {
+    font-family: $base__font-family;
+    color: $base-color__body;
+    font-size: $body__font-size;
+    line-height: $body__line-height;
+    background: $body-background;
+}
+
+%headings  {
+    line-height: 2.8;
+    text-transform: uppercase;
+}
+
+h1 {
+    @extend %headings;
+    font-size: rem(22);
+}
+
+h2 {
+    @extend %headings;
+    font-size: rem(18);
+}
+
+h3 {
+    @extend %headings;
+    font-size: rem(16);
+}
+
+h4 {
+    @extend %headings;
+    font-size: rem(14);
+}
+
+p  {
+    margin-bottom: rem(14);
+}
+
+main {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}

@@ -14,10 +14,11 @@
 		.module('Scorecards.score')
 		.controller('ScoreController', ScoreController);
 
-	function ScoreController($scope, $state, $interval, scoreService) {
+	function ScoreController($scope, $interval, scoreService) {
 		var that = this;
 
 		that.scores = [];
+		that.getScores = getScores;
 
 		var pushRequest;
 
@@ -38,12 +39,11 @@
 				.then(function(response) {
 					that.scores = response.data;
 				});
-			console.log('Scores updated');
 		}
 
 		function init() {
 			getScores();
-			//pushRequest = $interval(getScores, 10000);
+			//pushRequest = $interval(that.getScores, 10000);
 		}
 
 		init();

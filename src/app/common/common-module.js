@@ -10,8 +10,6 @@
 	'use strict';
 
 	angular
-		.module('Scorecards.common', [
-			'Scorecards.common.api'
-		]);
+		.module('Scorecards.common', []);
 
 })(window.angular);

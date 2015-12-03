@@ -14,9 +14,9 @@
 
 	function scoreData() {
 		return [
-			{homeTeam: 'cowboys', awayTeam:'stealers', homeScore:0, awayScore:21},
-			{homeTeam: 'patriots', awayTeam:'colts', homeScore:0, awayScore:21},
-			{homeTeam: 'eagles', awayTeam:'falcons', homeScore:0, awayScore:21}
+			{homeTeam: 'Cowboys', awayTeam: 'Stealers', homeScore: 0, awayScore: 21},
+			{homeTeam: 'Patriots', awayTeam: 'Colts', homeScore: 7, awayScore: 18},
+			{homeTeam: 'Eagles', awayTeam: 'Falcons', homeScore: 23, awayScore: 21}
 		];
 	}
 
