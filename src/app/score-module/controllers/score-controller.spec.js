@@ -3,8 +3,8 @@ describe('ScoreController', function() {
 	var scoreData;
 	var scoreService;
 	var scoreAPIConfig;
-	var controller;
-	var $controller;
+	var controller; // instance
+	var $controller; // constructor
 	var $httpBackend;
 	var $rootScope;
 	var $location;
@@ -39,6 +39,13 @@ describe('ScoreController', function() {
 		$httpBackend.verifyNoOutstandingRequest();
 	});
 
+	beforeEach(function() {
+		controller = $controller('ScoreController', {
+			$scope: scope,
+			scoreService: scoreService
+		});
+	});
+
 	it('ScoreController should be created', function() {
 		expect(controller).toBeDefined();
 	});
@@ -53,13 +60,6 @@ describe('ScoreController', function() {
 
 	it('check the main path', function() {
 		expect($location.path()).toBe('/');
-	});
-
-	beforeEach(function() {
-		controller = $controller('ScoreController', {
-			$scope: scope,
-			scoreService: scoreService
-		});
 	});
 
 	it ('should have 3 elements in array after calling getScores', function() {
