@@ -5,7 +5,7 @@
  * Service that facilitates communication with the remote HTTP-based API which can guarantee
  * some restrictions on payload structure.
  * Uses {@link http://docs.angularjs.org/api/ng/service/$http $http} service underneath so for
- * unit testing you can use {@link https://docs.angularjs.org/api/ngMock/service/$httpBackend
+ * unit testing you can use {@link https://docs.angularjs.org/api/ngMockE2E/service/$httpBackend
   $httpBackend mock}.
  */
 

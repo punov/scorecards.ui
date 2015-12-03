@@ -24,6 +24,10 @@
 			link: createScore
 		};
 
+		/**
+		 * Link function for this directive.
+		 * Just check if ngModel exists, and render the element
+		 */
 		function createScore(scope, elem, attrs, ngModel) {
 			if (!ngModel) {
 				$log.warn('Scorecard directive requires ngModel to be on the element');

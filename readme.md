@@ -1,34 +1,42 @@
 ## Quickstart
 
-1. Install [markdownpad](http://markdownpad.com/) to read documentation in .md format
+Demo page: http://punov.com/scorecards/
 
-2. Install [Node.js](http://nodejs.org/)
+To run solution locally, just use the following instruction: 
 
-2. Run following commands:
-npm install &&
-bower install &&
-gulp
+1. Install [Node.js](http://nodejs.org/)
 
-## Code Example
+2. Run the following commands from command line:
+	- npm install
+	- bower install
+	- gulp
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+The last command will start the 'watch' thread, so you can edit the code and track changes realtime on your local machine: http://localhost:3000/
 
-## Motivation
+## Environment
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+Current environment is 'dev', it means that I've prepared build configuration with script injection, scss compilation and style check, but without minification and concatenation. This steps are pretty obvious so I missed them for convenience of browser debugging.
 
-## Installation
+To configure your local environment, you can edit file:
 
-Provide code examples and explanations of how to get the project.
+*gulp/config.js*
 
-## API Reference
+## API
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+To mock the only request, I used ngMockE2E library, with help of $httpBackend. Main configuration is in root file: *app.js*, and you can find and change mock data in *scores-module/constants/score-data-constant.js*
+
+The main approach for updating data is the easiest one: $interval service, with 10-seconds updates. We could also use Firebase or Angular Websocket libraries, but with appropriate backend environment, I decided not to overengineer it in our simple mock example.
+
+## Style standards
+
+I always like to add jshint+jscs libraries as a build steps. This components allow you to check yourself and check your teammates automatically, getting the beautiful and consistent code in result.
 
 ## Tests
 
-Describe and show how to run the tests with code examples.
+You can run unit tests for score-module with command:
 
-## Contributors
+*karma start karma.conf.js*
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+Currently we have 19 successful tests for different parts of module:
+
+![Unit Tests up and running](http://punov.com/scorecards/unit-test.png)

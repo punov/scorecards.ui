@@ -25,6 +25,16 @@
 
 		/* implementation */
 
+		/**
+		 * @ngdoc method
+		 * @name getScores
+		 * @methodOf Scorecards.score.scoreService
+		 *
+		 * @description
+		 * Return promise
+		 *
+		 * @returns {$promise} Promise with mock scores data as a success result.
+		 */
 		function getScores() {
 			return api.get(scoreAPIConfig.scores);
 		}
