@@ -1,6 +1,6 @@
 /**
 * @ngdoc controller
-* @name Scorecards.home:HomeController
+* @name Scorecards.score:ScoreController
 * @requires $scope
 * @requires $state
 * @description
@@ -11,10 +11,10 @@
 	'use strict';
 
 	angular
-		.module('Scorecards.home')
-		.controller('HomeController', HomeController);
+		.module('Scorecards.score')
+		.controller('ScoreController', ScoreController);
 
-	function HomeController($scope, $state, $interval, homeService) {
+	function ScoreController($scope, $state, $interval, scoreService) {
 		var that = this;
 
 		that.scores = [];
@@ -34,7 +34,7 @@
 		});
 
 		function getScores() {
-			homeService.getScores()
+			scoreService.getScores()
 				.then(function(response) {
 					that.scores = response.data;
 				});

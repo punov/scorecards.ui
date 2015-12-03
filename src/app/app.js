@@ -16,7 +16,7 @@
 			'ui.router',
 			'ngMockE2E',
 			'Scorecards.common',
-			'Scorecards.home'
+			'Scorecards.score'
 		]
 	)
 		.config(config)
@@ -27,26 +27,19 @@
 		$logProvider,
 		$urlRouterProvider,
 		globalConfig,
-		homeRouteConfig,
+		scoreRouteConfig,
 		$locationProvider
 	) {
 		$logProvider.debugEnabled(globalConfig.debug);
-		$urlRouterProvider.otherwise(homeRouteConfig.home);
+		$urlRouterProvider.otherwise(scoreRouteConfig.home);
 		$locationProvider.html5Mode(true);
 	}
 
-	function run($http, $httpBackend) {
-
-		var scores = [
-			{homeTeam: 'cowboys', awayTeam:'stealers', homeScore:0, awayScore:21},
-			{homeTeam: 'patriots', awayTeam:'colts', homeScore:0, awayScore:21},
-			{homeTeam: 'eagles', awayTeam:'falcons', homeScore:0, awayScore:21},
-			{homeTeam: 'eagles', awayTeam:'falcons', homeScore:0, awayScore:21}
-		];
+	function run($http, $httpBackend, scoreData) {
 
 		$httpBackend.whenGET('api/scores')
 			.respond(function() {
-				return [200, scores, {}];
+				return [200, scoreData, {}];
 			});
 		$httpBackend.whenGET(/^app/).passThrough();
 	}

@@ -18,17 +18,14 @@ module.exports = {
 		development : {
 			server : {
 				baseDir : [src]
-			}
-			,reloadDebounce: 1000
-			,files: [
-				src + '/**/*.css'
-				,jsSrc + '/**/*.js'
-				,src + '/images/**/*.*'
-				,src + '/fonts/*'
-				//,src + '/**/*.html'
-				,src + '/index.html'
-			]
-			,port : 3000
+			},
+			reloadDebounce: 1000,
+			files: [
+				src + '/**/*.css',
+				jsSrc + '/**/*.js',
+				src + '/index.html'
+			],
+			port : 3000
 		}
 	},
 	sass         : {
@@ -120,8 +117,7 @@ module.exports = {
 		src  : {
 			assets : [
 				build + '/styles/**/*.css',
-				build + '/app/**/*.js',
-				build + '/images/**/*'
+				build + '/app/**/*.js'
 			],
 			base   : build
 		},
@@ -147,10 +143,6 @@ module.exports = {
 			,src + '/*.ico'
 		]
 		, dest : build
-	},
-	images     : {
-		src  : src + '/images/**/*',
-		dest : build
 	},
 	index      : {
 		src  : src + '/_index.html',

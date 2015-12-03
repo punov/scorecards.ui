@@ -1,21 +1,21 @@
 /**
  * @ngdoc service
- * @name Scorecards.home.homeService
+ * @name Scorecards.score.scoreService
  * @requires Scorecards.common.api.api
  * @description
- * Business logic of home module
+ * Business logic of the Score module
  */
 
 (function(angular) {
 	'use strict';
 
 	angular
-		.module('Scorecards.home')
-		.service('homeService', homeService);
+		.module('Scorecards.score')
+		.service('scoreService', scoreService);
 
-	function homeService(
+	function scoreService(
 		api,
-		homeAPIConfig
+		scoreAPIConfig
 	) {
 		var that = this;
 
@@ -26,7 +26,7 @@
 		/* implementation */
 
 		function getScores() {
-			return api.get(homeAPIConfig.scores);
+			return api.get(scoreAPIConfig.scores);
 		}
 	}
 

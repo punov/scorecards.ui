@@ -1,17 +1,11 @@
-@media only screen and (max-width : 959px) {
+@media only screen and (max-width : 749px) {
     main {
-        width: 720px;
+        width: 500px;
     }
 }
 
-@media only screen and (max-width : 719px) {
+@media only screen and (max-width : 499px) {
     main {
-        width: 480px;
-    }
-}
-
-@media only screen and (max-width : 479px) {
-    main {
-        width: 240px;
+        width: 250px;
     }
 }

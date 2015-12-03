@@ -1,7 +1,7 @@
-describe('Home Module', function() {
+describe('Score Module', function() {
 	'use strict';
 
-	var mod = angular.module('Scorecards.home');
+	var mod = angular.module('Scorecards.score');
 
 	it('should be registered', function() {
 		expect(mod).toBeTruthy();

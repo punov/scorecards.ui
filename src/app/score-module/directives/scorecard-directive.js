@@ -1,23 +1,23 @@
 /**
  * @ngdoc directive
- * @name Scorecards.home.directive:cmsScorecard
+ * @name Scorecards.score.directive:cmsScorecard
  * @param {Object} data
  * @description
- * Creates score block
+ * Creates score div
  */
 
 (function(angular) {
 	'use strict';
 
 	angular
-		.module('Scorecards.home')
+		.module('Scorecards.score')
 		.directive('cmsScorecard', cmsScorecard);
 
 	function cmsScorecard($log) {
 		return {
 			restrict: 'E',
 			require: 'ngModel',
-			templateUrl: 'app/home-module/views/directives/tpl.cms-scorecard.html',
+			templateUrl: 'app/score-module/views/directives/tpl.cms-scorecard.html',
 			scope: {
 				ngModel: '='
 			},
