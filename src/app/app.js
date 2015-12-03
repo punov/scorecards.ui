@@ -36,7 +36,6 @@
 	}
 
 	function run($http, $httpBackend, scoreData) {
-
 		$httpBackend.whenGET('api/scores')
 			.respond(function() {
 				return [200, scoreData, {}];

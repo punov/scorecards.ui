@@ -21,7 +21,7 @@
 
 		/* public */
 
-		that.path = globalConfig.apiPath;
+		that.path = globalConfig.apiPath || 'api';
 		that.get = getRequest;
 
 		/* implementation */

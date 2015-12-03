@@ -16,7 +16,8 @@
 
 	function ScoreController($scope, $interval, scoreService) {
 		var that = this;
-
+		that.test = 0;
+		that.loading = true;
 		that.scores = [];
 		that.getScores = getScores;
 
@@ -35,9 +36,16 @@
 		});
 
 		function getScores() {
+			that.test = 2;
 			scoreService.getScores()
 				.then(function(response) {
 					that.scores = response.data;
+				})
+				.catch(function(error){
+					// can show error message here
+				})
+				.finally(function(){
+					that.loading = false;
 				});
 		}
 

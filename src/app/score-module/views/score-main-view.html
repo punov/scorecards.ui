@@ -1,4 +1,5 @@
 <h1>NFL Scorecards</h1>
+<p ng-show="ctrl.loading">Loading..</p>
 <div class="scorecards">
     <cms-scorecard class="scorecard" ng-repeat="score in ctrl.scores" ng-model="score"></cms-scorecard>
 </div>
