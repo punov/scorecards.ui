@@ -13,7 +13,7 @@
 		.module('Scorecards.score')
 		.directive('cmsScorecard', cmsScorecard);
 
-	function cmsScorecard($log) {
+	function cmsScorecard() {
 		return {
 			restrict: 'E',
 			require: 'ngModel',

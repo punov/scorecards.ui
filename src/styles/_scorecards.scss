@@ -35,3 +35,27 @@
     }
   }
 }
+
+.news {
+  width: 100%;
+  max-width:600px;
+  height: 190px;
+  padding: 20px;
+  margin: 10px auto;
+  background: $score-background;
+  color: $score-color;
+  border-radius: 10px;
+  display: block;
+
+  .img {
+    width: 150px;
+    height: 150px;
+    float: left;
+    background-color: white;
+    margin-right: 20px;
+  }
+  .text {
+    width: 70%;
+    margin: 0 auto;
+  }
+}

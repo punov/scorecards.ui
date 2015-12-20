@@ -14,9 +14,12 @@
 		.module(
 		'Scorecards', [
 			'ui.router',
+			'ui.scroll',
+			'ui.scroll.jqlite',
 			'ngMockE2E',
 			'Scorecards.common',
-			'Scorecards.score'
+			'Scorecards.score',
+			'Scorecards.news'
 		]
 	)
 		.config(config)
@@ -27,12 +30,15 @@
 		$logProvider,
 		$urlRouterProvider,
 		globalConfig,
-		scoreRouteConfig,
-		$locationProvider
+		scoreRouteConfig
 	) {
 		$logProvider.debugEnabled(globalConfig.debug);
 		$urlRouterProvider.otherwise(scoreRouteConfig.home);
-		$locationProvider.html5Mode(true);
+		/**
+		 * Uncomment this line to remove the hash from url.
+		 * Don't forget to inject $locationProvider to config function
+		 */
+		//$locationProvider.html5Mode(true);
 	}
 
 	function run($http, $httpBackend, scoreData) {

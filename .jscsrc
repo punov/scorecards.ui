@@ -1,6 +1,6 @@
 {
 	"preset": "google",
 	"validateIndentation": "\t",
-	"maximumLineLength": 120,
+	"maximumLineLength": 220,
 	"maxErrors": 20
 }
