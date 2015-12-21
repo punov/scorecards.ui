@@ -47,29 +47,6 @@
   border-radius: 10px;
   display: block;
 
-  .ng-leave, .ng-enter {
-    -webkit-transition: 0.75s linear all;
-    transition: 0.75s linear all;
-  }
-
-  .ng-enter {
-    opacity: 0;
-    height: 0;
-  }
-  .ng-enter.ng-enter-active {
-    opacity: 1;
-    height: 190px;
-  }
-
-  .ng-leave {
-    opacity: 1;
-    height: 190px;
-  }
-  .ng-leave.ng-leave-active {
-    opacity: 0;
-    height: 0;
-  }
-
   .img {
     width: 150px;
     height: 150px;
@@ -78,24 +55,17 @@
     margin-right: 20px;
   }
   .text {
-    width: 70%;
     margin: 0 auto;
   }
 }
 
-.news-message {
-  cursor: pointer;
+.news-infobox {
   position: fixed;
   background-color: $score-background;
   color: $score-color;
-  padding: 20px;
+  padding: 2rem 2rem 1rem 2rem;
   right: 20px;
-
-  &.topped {
-    top: 20px;
-  }
-
-  &.bottomed {
-    bottom: 20px;
-  }
+  bottom: 20px;
+  opacity: 0.8;
+  border: 1px dashed black;
 }

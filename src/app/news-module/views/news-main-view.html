@@ -3,18 +3,15 @@
 <p ng-show="ctrl.loading">Loading..</p>
 <div ui-scroll="item in ctrl.datasource" padding="1" buffer-size="5" top-visible-scope="topVisible">
     <div class="news" ng-cloak>
-        <div class="img">
+        <div ui-sref="score" class="img">
         </div>
         <div class="text">
-            <p>{{item.title}}</p>
-            <p>{{item.content}}</p>
+            <p>{{::item.title}}</p>
+            <p>{{::item.content}}</p>
         </div>
     </div>
 </div>
-<div ng-click="ctrl.goToTop()" ng-show="ctrl.offset > 10" class="news-message topped">
-<p>To the top</p>
-</div>
-<div class="news-message bottomed">
-    <p>Elements count: {{ctrl.datasource.items.length}}</p>
-    <p>Watchers count: {{ctrl.getWatchCount()}}</p>
+<div class="news-infobox">
+    <p>News counter: {{ctrl.datasource.items.length}}</p>
+    <p>Watchers counter: {{ctrl.getWatchersCount()}}</p>
 </div>

@@ -18,39 +18,45 @@
 
 		/* public */
 
-		that.getWatchCount = getWatchCount;
+		that.getWatchersCount = getWatchersCount;
 
-		var apps;
+		/**
+		 *
+		 * @returns {int} count of watchers in application
+		 * Example counter-function from:
+		 * http://stackoverflow.com/questions/18499909/how-to-count-total-number-of-watches-on-a-page
+		 *
+		 */
+		function getWatchersCount() {
+			var root = angular.element(document.getElementsByTagName('html'));
 
-		function getScopeList(rs) {
-			var scopeList = [];
+			var watchers = [];
 
-			function traverseScope(s) {
-				scopeList.push(s);
-				if (s.$$nextSibling) {
-					traverseScope(s.$$nextSibling);
+			var f = function(element) {
+				angular.forEach(['$scope', '$isolateScope'], function(scopeProperty) {
+					if (element.data() && element.data().hasOwnProperty(scopeProperty)) {
+						angular.forEach(element.data()[scopeProperty].$$watchers, function(watcher) {
+							watchers.push(watcher);
+						});
+					}
+				});
+
+				angular.forEach(element.children(), function(childElement) {
+					f(angular.element(childElement));
+				});
+			};
+
+			f(root);
+
+			// Remove duplicate watchers
+			var watchersWithoutDuplicates = [];
+			angular.forEach(watchers, function(item) {
+				if (watchersWithoutDuplicates.indexOf(item) < 0) {
+					watchersWithoutDuplicates.push(item);
 				}
-				if (s.$$childHead) {
-					traverseScope(s.$$childHead);
-				}
-			}
-
-			traverseScope(rs);
-			return scopeList;
-		}
-
-		function getWatchCount() {
-			var total = 0;
-			apps = angular.element(document.querySelectorAll('[ng-app]'));
-			[].forEach.call(apps, function(app, i) {
-				var ngapp = angular.element(app);
-				var slist = getScopeList(ngapp.scope());
-				var wl = slist.map(function(s) {return s.$$watchers;});
-				//c = _.uniq(_.flatten(wl)).length;
-				var appName = ngapp.attr('ng-app') || ngapp.attr('data-ng-app') || i;
-				total += wl.length;
 			});
-			return total;
+
+			return watchersWithoutDuplicates.length;
 		}
 	}
 
