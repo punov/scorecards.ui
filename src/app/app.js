@@ -15,6 +15,7 @@
 		'Scorecards', [
 			'ui.router',
 			'ui.scroll',
+			'ngAnimate',
 			'ui.scroll.jqlite',
 			'ngMockE2E',
 			'Scorecards.common',

@@ -13,18 +13,24 @@
 		.module('Scorecards.news')
 		.controller('NewsController', NewsController);
 
-	function NewsController($scope, $location, newsService, infiniteCache) {
+	function NewsController($scope, $state, $location, newsService, infiniteCache, watchService) {
 
 		var that = this;
 
 		/* public properties and methods */
 
 		that.loading = true;
+		that.offset = 0;
 		that.datasource = {
 			items: [],
 			get: newsService.getNews
 		};
-		//that.getWatchCount = watchService.getWatchCount;
+		that.goToTop = function() {
+			$location.search('offset', 1);
+			$location.replace();
+			$state.go($state.current, {}, {reload: true});
+		}
+		that.getWatchCount = watchService.getWatchCount;
 
 		$scope.$on('$destroy', function() {
 			$scope.topVisible = null;
@@ -35,6 +41,7 @@
 		}), function() {
 			if ($scope.topVisible) {
 				$location.search('offset', $scope.topVisible.$index + that.datasource.offset);
+				that.offset = $scope.topVisible.$index + that.datasource.offset;
 				return $location.replace();
 			}
 		});

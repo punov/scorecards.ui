@@ -11,3 +11,10 @@
         </div>
     </div>
 </div>
+<div ng-click="ctrl.goToTop()" ng-show="ctrl.offset > 10" class="news-message topped">
+<p>To the top</p>
+</div>
+<div class="news-message bottomed">
+    <p>Elements count: {{ctrl.datasource.items.length}}</p>
+    <p>Watchers count: {{ctrl.getWatchCount()}}</p>
+</div>

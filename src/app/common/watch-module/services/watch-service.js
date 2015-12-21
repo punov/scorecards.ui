@@ -40,14 +40,14 @@
 		}
 
 		function getWatchCount() {
-			total = 0;
+			var total = 0;
 			apps = angular.element(document.querySelectorAll('[ng-app]'));
 			[].forEach.call(apps, function(app, i) {
 				var ngapp = angular.element(app);
 				var slist = getScopeList(ngapp.scope());
 				var wl = slist.map(function(s) {return s.$$watchers;});
 				//c = _.uniq(_.flatten(wl)).length;
-				appName = ngapp.attr('ng-app') || ngapp.attr('data-ng-app') || i;
+				var appName = ngapp.attr('ng-app') || ngapp.attr('data-ng-app') || i;
 				total += wl.length;
 			});
 			return total;
