@@ -2,7 +2,7 @@
  * @ngdoc module
  * @name  Scorecards.news
  * @description
- * News module, show news, infinite scroll
+ * News module, show news infinite scroll with watcher statistics
  */
 
 (function(angular) {
@@ -26,7 +26,6 @@
 				parent: 'main-layout',
 				url: newsRouteConfig.news,
 				views: {
-					// injecting our views into the parent layout
 					'main@main-layout': {
 						templateUrl: 'app/news-module/views/news-main-view.html',
 						controller: 'NewsController',

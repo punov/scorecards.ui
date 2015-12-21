@@ -29,7 +29,7 @@
 		/**
 		 * @ngdoc method
 		 * @name getNews
-		 * @methodOf Scorecards.score.scoreService
+		 * @methodOf Scorecards.news.newssService
 		 *
 		 * @description
 		 * Return promise

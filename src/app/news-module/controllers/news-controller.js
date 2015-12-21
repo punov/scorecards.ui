@@ -3,7 +3,7 @@
 * @name Scorecards.news:NewsController
 * @requires $scope
 * @description
-* Infinite-scroll example of scorecards ui
+* Infinite-scroll example of scorecards ui.
 */
 
 (function(angular) {
@@ -19,13 +19,18 @@
 
 		/* public properties and methods */
 
-		that.loading = true;
+		// Initial datasource object for ui-scroll directive.
+		// Contains 'items' array and 'get' method as endpoint to get new data
 		that.datasource = {
 			items: [],
 			get: newsService.getNews
 		};
+
+		// method to track the count of watchers in application
 		that.getWatchersCount = utilsService.getWatchersCount;
 
+		// topVisible - is object which contains the index of currently visible element
+		// We need to watch this one, to change the 'offset' url parameter accordingly to that.
 		$scope.$watch((function() {
 			return $scope.topVisible;
 		}), function() {
@@ -40,20 +45,23 @@
 		 * @name init
 		 * @methodOf Scorecards.news.controller:NewsController
 		 * @description
-		 *
+		 * The main logic of the controller.
+		 * We need to reset topVisible variable and init special cache service for infinite scroll
 		 */
 		function init() {
-			// Get the offset on load
+			// Get the offset parameter on load
 			var offset = $location.search().offset;
 			that.datasource.offset = offset > 0 ? offset - 1 : 0;
-			// top visible element is always 0 on load. Clear the last value, stored by ui-scroll
+
+			// top visible element is always 0 on load. Clear the last value, stored by ui-scroll directive
 			if ($scope.topVisible) {
 				$scope.topVisible.$index = 0;
 			}
-			// init helper service. Will help to cache and scroll fast
-			// You can just disable this line, if don't need to cache and and monitor the offset
+
+			// Special helper service, from official ui-scroll repository.
+			// Will help to cache and scroll better and faster
+			// You can just comment this line, if you don't need to cache the previously loaded data
 			infiniteCache.init(that.datasource);
-			that.loading = false;
 		}
 
 		init();

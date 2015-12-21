@@ -23,7 +23,6 @@
 		/* public */
 
 		that.init = init;
-		// make it public for unit tests
 		that.getCached = getCached;
 
 		function init(context) {
@@ -71,17 +70,14 @@
 
 		function getItems(index, count, callback) {
 			var i;
-			var isCached;
 			var j;
 			var ref;
 			var ref1;
 			var result;
 
 			result = [];
-			isCached = true;
 			for (i = j = ref = index, ref1 = index + count - 1; j <= ref1; i = j += 1) {
 				if (!this.items.hasOwnProperty(i)) {
-					isCached = false;
 					return false;
 				}
 				result.push(this.items[i]);
