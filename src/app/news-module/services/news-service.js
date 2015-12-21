@@ -45,16 +45,20 @@
 				var ref1;
 				var result;
 
-				console.log('Getting data, index: ' + index + ', count:' + count);
 				result = [];
-				for (i = j = ref = index, ref1 = index + count - 1; ref <= ref1 ? j <= ref1 : j >= ref1; i = ref <= ref1 ? ++j : --j) {
+				for (i = j = ref = index,
+					ref1 = index + count - 1;
+					ref <= ref1 ? j <= ref1 : j >= ref1;
+					i = ref <= ref1 ? ++j : --j
+				) {
 					if (i > 0) {
 						item = {};
 						item.title = 'The News Title #' + i;
-						item.content = 'Here you can see the text of News #' + i + ', the long content of it. This news already loaded in memory and presented in DOM only when visible in viewport.';
-						item.data = {
-							some: false
-						};
+						item.content = 'Here you can see the text of News #' +
+							i +
+							', the long content of it. This news already loaded in memory and ' +
+							'presented in DOM only when visible in viewport.';
+						item.comments = Math.floor(Math.random() * 10);
 						result.push(item);
 					}
 				}

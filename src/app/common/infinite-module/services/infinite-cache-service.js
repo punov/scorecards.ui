@@ -23,12 +23,14 @@
 		/* public */
 
 		that.init = init;
+		// make it public for unit tests
+		that.getCached = getCached;
 
 		function init(context) {
 			context.saveItems = saveItems;
 			context.getItems = getItems;
 			context.getPure = context.get;
-			context.get = getCached;
+			context.get = that.getCached;
 			return;
 		}
 

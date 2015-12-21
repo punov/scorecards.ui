@@ -11,10 +11,9 @@
 	angular
 		.module('Scorecards.news', [
 			'ui.router',
-            'Scorecards.common.api',
 			'Scorecards.common.infinite',
 			'Scorecards.common.layout',
-			'Scorecards.common.watch'
+			'Scorecards.common.utils'
 		])
 		.config(routesConfig);
 

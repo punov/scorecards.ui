@@ -59,7 +59,7 @@ describe('ScoreController', function() {
 	});
 
 	it('check the main path', function() {
-		expect($location.path()).toBe('/');
+		expect($location.path()).toBe('');
 	});
 
 	it ('should have 3 elements in array after calling getScores', function() {

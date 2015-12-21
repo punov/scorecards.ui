@@ -19,6 +19,8 @@ module.exports = function(config) {
       'lib/angular/angular.js',
       'lib/ui-router/release/angular-ui-router.js',
       'lib/angular-mocks/angular-mocks.js',
+      'lib/angular-ui-scroll/dist/ui-scroll.js',
+      'lib/angular-ui-scroll/dist/ui-scroll-jqlite.js',
       // application
       'app/**/*-module.js',
       'app/**/*.js',

@@ -30,6 +30,9 @@
 			it('should have Scorecards.score as a dependency', function() {
 				expect(hasModule('Scorecards.score')).toEqual(true);
 			});
+			it('should have Scorecards.news as a dependency', function() {
+				expect(hasModule('Scorecards.news')).toEqual(true);
+			});
 		});
 	});
 })();

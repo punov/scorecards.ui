@@ -3,11 +3,12 @@
 <p ng-show="ctrl.loading">Loading..</p>
 <div ui-scroll="item in ctrl.datasource" padding="1" buffer-size="5" top-visible-scope="topVisible">
     <div class="news" ng-cloak>
-        <div ui-sref="score" class="img">
+        <div class="img">
         </div>
         <div class="text">
             <p>{{::item.title}}</p>
             <p>{{::item.content}}</p>
+            <p ui-sref="score">Comments({{item.comments}})</p>
         </div>
     </div>
 </div>

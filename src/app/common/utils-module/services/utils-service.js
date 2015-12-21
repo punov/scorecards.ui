@@ -1,6 +1,6 @@
 /**
  * @ngdoc service
- * @name Scorecards.common.watch.watchService
+ * @name Scorecards.common.utils.utilsService
  * @description
  * Helper Service to figure out the total $watchers count
  */
@@ -9,10 +9,10 @@
 	'use strict';
 
 	angular
-		.module('Scorecards.common.watch')
-		.service('watchService', watchService);
+		.module('Scorecards.common.utils')
+		.service('utilsService', utilsService);
 
-	function watchService($timeout) {
+	function utilsService() {
 
 		var that = this;
 

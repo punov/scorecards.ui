@@ -37,6 +37,6 @@ You can run unit tests for score-module with command:
 
 *karma start karma.conf.js*
 
-Currently we have 19 successful tests for different parts of module:
+Currently we have 29 successful tests for different parts of module:
 
 ![Unit Tests up and running](http://punov.com/scorecards/unit-test.png)

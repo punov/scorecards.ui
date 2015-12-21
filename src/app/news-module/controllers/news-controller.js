@@ -13,7 +13,7 @@
 		.module('Scorecards.news')
 		.controller('NewsController', NewsController);
 
-	function NewsController($scope, $state, $location, newsService, infiniteCache, watchService) {
+	function NewsController($scope, $state, $location, newsService, infiniteCache, utilsService) {
 
 		var that = this;
 
@@ -24,7 +24,7 @@
 			items: [],
 			get: newsService.getNews
 		};
-		that.getWatchersCount = watchService.getWatchersCount;
+		that.getWatchersCount = utilsService.getWatchersCount;
 
 		$scope.$watch((function() {
 			return $scope.topVisible;
